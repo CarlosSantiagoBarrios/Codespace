@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Array of image links
+        const imageLinks = [
+            "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.11.43-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.17.46-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.19.48-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.23.06-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.26.27-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.29.41-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.31.18-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.33.29-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.37.01-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.38.13-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.41.03-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.44.14-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.47.53-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.53.22-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.54.51-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-5.59.52-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-6.04.44-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-6.06.55-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-6.08.34-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-6.12.28-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-6.15.42-pm.jpg", "https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/main/loadingImages/screen-shot-2014-04-19-at-6.17.29-pm.jpg"
+        ];
+
+        function getRandomImage() {
+            const randomIndex = Math.floor(Math.random() * imageLinks.length);
+            return imageLinks[randomIndex];
+        }
+
+        // Start changing images on page load
+        window.onload = function() {
+            let iterationCount = 0;
+            
+            const imageSwitchInterval = setInterval(() => {
+                const randomImage = getRandomImage();
+                document.body.style.backgroundImage = `url('${randomImage}')`;
+                
+                iterationCount++;
+                if (iterationCount >= 20) { // 5 seconds / 0.25 seconds per image = 20 iterations
+                    clearInterval(imageSwitchInterval);
+                }
+            }, 250); // Change image every 0.25 seconds
+        }
+    </script>
+</body>
+</html>
