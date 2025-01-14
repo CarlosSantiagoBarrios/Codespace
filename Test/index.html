@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://cdn.shopify.com/s/files/1/0724/1505/2001/files/starrysky.gif?v=1728530345');
+            background-repeat: repeat;
+            background-size: auto;
+        }
+        #fullScreenImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <img id="fullScreenImage" style="display:none" />
+
+    <script>
+        const imageUrls = [
+  "https://images.pexels.com/photos/30210046/pexels-photo-30210046.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30209467/pexels-photo-30209467.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30208102/pexels-photo-30208102.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30201437/pexels-photo-30201437.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30195371/pexels-photo-30195371.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30186651/pexels-photo-30186651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30180323/pexels-photo-30180323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30167948/pexels-photo-30167948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30167837/pexels-photo-30167837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30159434/pexels-photo-30159434.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30159495/pexels-photo-30159495.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30164274/pexels-photo-30164274.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30167059/pexels-photo-30167059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30154113/pexels-photo-30154113.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "https://images.pexels.com/photos/30151342/pexels-photo-30151342.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+];
+
+        let intervalId;
+        let counter = 0;
+        const duration = 5000;
+        const changeInterval = 450;
+        const imageElement = document.getElementById('fullScreenImage');
+
+        function showRandomImage() {
+            if(counter * changeInterval < duration) {
+                const randomIndex = Math.floor(Math.random() * imageUrls.length);
+                imageElement.src = imageUrls[randomIndex];
+                imageElement.style.display = 'block';
+                counter++;
+            } else {
+                clearInterval(intervalId);
+                imageElement.style.display = 'none';
+            }
+        }
+
+        window.onload = () => {
+            intervalId = setInterval(showRandomImage, changeInterval);
+        };
+    </script>
+</body>
+</html>
