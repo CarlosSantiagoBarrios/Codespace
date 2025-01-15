@@ -285,6 +285,7 @@
             if(counter * changeInterval < duration) {
                 const randomIndex = Math.floor(Math.random() * imageUrls.length);
                 imageElement.src = imageUrls[randomIndex];
+                imageElement.style.borderRadius = '25px';
                 imageElement.style.display = 'block';
                 counter++;
             } else {
