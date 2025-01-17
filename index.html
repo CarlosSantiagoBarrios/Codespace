@@ -46,57 +46,56 @@
 
     <img id="pexelsThumbnail" />
 
-    <script>
-        const imageUrls = [
-  {
-    "id": 45170,
-    "large2x": "https://images.pexels.com/photos/45170/kittens-cat-cat-puppy-rush-45170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "url": "https://www.pexels.com/photo/assorted-color-kittens-45170/"
-  },
-  {
-    "id": 66898,
-    "large2x": "https://images.pexels.com/photos/66898/elephant-cub-tsavo-kenya-66898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "url": "https://www.pexels.com/photo/1-elephant-beside-on-baby-elephant-66898/"
-  },
-  {
-    "id": 47547,
-    "large2x": "https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "url": "https://www.pexels.com/photo/brown-squirrel-47547/"
-  },
-  {
-    "id": 34098,
-    "large2x": "https://images.pexels.com/photos/34098/south-africa-hluhluwe-giraffes-pattern.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "url": "https://www.pexels.com/photo/three-giraffe-under-gray-sky-34098/"
-  },
-  {
-    "id": 792381,
-    "large2x": "https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "url": "https://www.pexels.com/photo/close-up-photography-of-tiger-792381/"
-  }
-];
-
-        let currentIndex = 0;
-        const imageElement = document.getElementById('pexelsThumbnail');
-        const displayDuration = 5000; // 5 seconds
-
-        function showNextImage() {
-            if (currentIndex >= imageUrls.length) {
-                currentIndex = 0; // Reset to start after the last image
-            }
-            const nextImage = imageUrls[currentIndex];
-            imageElement.src = nextImage.large2x;
-            imageElement.onclick = () => {
-                // window.location.href = nextImage.url;
-                window.open(nextImage.url, '_blank'); // Opens the URL in a new tab
-            };
-            currentIndex++;
+<script>
+    const imageUrls = [
+        
+        {
+            "id": 66898,
+            "large2x": "https://images.pexels.com/photos/66898/elephant-cub-tsavo-kenya-66898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "url": "https://www.pexels.com/photo/1-elephant-beside-on-baby-elephant-66898/"
+        },
+        {
+            "id": 47547,
+            "large2x": "https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "url": "https://www.pexels.com/photo/brown-squirrel-47547/"
+        },
+        {
+            "id": 792381,
+            "large2x": "https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "url": "https://www.pexels.com/photo/close-up-photography-of-tiger-792381/"
         }
+    ];
 
-        window.onload = () => {
-            showNextImage(); // Show the first image immediately
-            setInterval(showNextImage, displayDuration);
+    let currentIndex = 0;
+    const imageElement = document.getElementById('pexelsThumbnail');
+    const displayDuration = 5000; // 5 seconds
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+        }
+    }
+
+    function showNextImage() {
+        if (currentIndex >= imageUrls.length) {
+            currentIndex = 0;
+            shuffleArray(imageUrls); // Shuffle the array when starting over
+        }
+        const nextImage = imageUrls[currentIndex];
+        imageElement.src = nextImage.large2x;
+        imageElement.onclick = () => {
+            window.open(nextImage.url, '_blank'); // Opens the URL in a new tab
         };
-    </script>
+        currentIndex++;
+    }
+
+    window.onload = () => {
+        shuffleArray(imageUrls); // Shuffle once when page loads
+        showNextImage(); // Show the first image immediately
+        setInterval(showNextImage, displayDuration);
+    };
+</script>
 </body>
 </html>
 Delta - 2025-01-16T120902.610.html
