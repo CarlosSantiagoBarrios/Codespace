@@ -1,7 +1,7 @@
 // This script makes a GET call on the Pexels API (https://www.pexels.com/api/documentation/?#photos-search)
 
 // Define the API URL and the authorization key
-const apiUrl = "https://api.pexels.com/v1/curated?per_page=3";
+const apiUrl = "https://api.pexels.com/v1/search?page=100&per_page=80&query=world";
 const apiKey = "6EdsN9H0AGKaO5qjDly59dWAJJpXaKZf2pc1AfbuaNeSzGyDGJQxcFqK";
 
 // Function to make the GET request
