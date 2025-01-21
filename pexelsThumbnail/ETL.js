@@ -1,9 +1,24 @@
-// This script makes a GET call on the Pexels API (https://www.pexels.com/api/documentation/?#photos-search)
+// This script makes a GET call on the Pexels API (https://www.https://www.pexels.com/api/documentation)
+
+//Calls
+//curated: https://api.pexels.com/v1/curated?page=10&per_page=80
+//search: https://api.pexels.com/v1/search?page=100&per_page=80&query=animals 
 
 // Define the API URL and the authorization key
-//change only the '?page' (eq or > 100), and the 'query', as changing the 'per_page' doesn't really make a difference (the # of photos retrieved won't ever be higher than 80)
-const apiUrl = "https://api.pexels.com/v1/search?page=100&per_page=80&query=world";
+//change only the '?page' (eq or > 100), and the 'query', as changing the 'per_page' (80) doesn't really make a difference (the # of photos retrieved won't ever be higher than 80)
+
 const apiKey = "6EdsN9H0AGKaO5qjDly59dWAJJpXaKZf2pc1AfbuaNeSzGyDGJQxcFqK";
+
+const page = 21;
+const perPage = 80;
+const query = 'food';
+
+const curated = `https://api.pexels.com/v1/curated?page=${page}&per_page=${perPage}`;
+const search = `https://api.pexels.com/v1/search?page=${page}&per_page=${perPage}&query=${encodeURIComponent(query)}`; 
+
+//Api Switch (curated, search)
+const apiUrl = `${search}`;
+
 
 // Function to make the GET request
 const fetchCuratedPhotos = async () => {
@@ -35,10 +50,6 @@ const fetchCuratedPhotos = async () => {
 
         // Print the result as a JSON array
         console.log(JSON.stringify(photosArray, null, 2));
-
-
-
-
 
     } catch (error) {
         console.error('Error fetching data:', error);
