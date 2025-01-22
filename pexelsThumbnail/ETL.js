@@ -1,6 +1,8 @@
 // This script makes a GET call on the Pexels API (https://www.https://www.pexels.com/api/documentation)
 // Filters the results to have only the 'id' 'large2x' and 'url' fields
 // Automatically downloads a .json file into the local machine with the results
+// removes the '[' ']' symbols from the downloaded/printed json, and adds a ',' at the end of it
+
 
 //Calls
 //curated: https://api.pexels.com/v1/curated?page=10&per_page=80
@@ -10,11 +12,12 @@
 //change only the '?page' (eq or > 100), and the 'query', as changing the 'per_page' (80) doesn't really make a difference (the # of photos retrieved won't ever be higher than 80)
 
 
+
 const apiKey = "6EdsN9H0AGKaO5qjDly59dWAJJpXaKZf2pc1AfbuaNeSzGyDGJQxcFqK";
 
-const page = 21;
-const perPage = 80;
-const query = 'sea';
+const page = 1;
+const perPage = 6;
+const query = 'panter';
 
 const curated = `https://api.pexels.com/v1/curated?page=${page}&per_page=${perPage}`;
 const search = `https://api.pexels.com/v1/search?page=${page}&per_page=${perPage}&query=${encodeURIComponent(query)}`;
@@ -47,11 +50,14 @@ const fetchCuratedPhotos = async () => {
             url: photo.url
         }));
 
-        // Print the result as a JSON array
-        console.log(JSON.stringify(photosArray, null, 2));
+        // Create the desired format without brackets
+        const formattedPhotos = photosArray.map(photo => JSON.stringify(photo, null, 2)).join(',\n');
+
+        // Print the formatted result
+        console.log(formattedPhotos + ',');
 
         // Create a blob from the photos array
-        const jsonBlob = new Blob([JSON.stringify(photosArray, null, 2)], { type: 'application/json' });
+        const jsonBlob = new Blob([formattedPhotos + ','], { type: 'application/json' });
 
         // Create a download link
         const url = URL.createObjectURL(jsonBlob);
@@ -63,7 +69,7 @@ const fetchCuratedPhotos = async () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        
+
         // Revoke the object URL after download
         URL.revokeObjectURL(url);
 
