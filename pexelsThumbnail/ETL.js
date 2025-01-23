@@ -15,19 +15,17 @@
 
 const apiKey = "6EdsN9H0AGKaO5qjDly59dWAJJpXaKZf2pc1AfbuaNeSzGyDGJQxcFqK";
 
-const page = 1;
-const perPage = 6;
-const query = 'panter';
-
-const curated = `https://api.pexels.com/v1/curated?page=${page}&per_page=${perPage}`;
-const search = `https://api.pexels.com/v1/search?page=${page}&per_page=${perPage}&query=${encodeURIComponent(query)}`;
-
-// Api Switch (curated, search)
-const apiUrl = `${search}`;
+let page = 1;
+const perPage = 80;
+const query = 'sea animals';
+const numberOfPagesToCall = 50;
 
 // Function to make the GET request
 const fetchCuratedPhotos = async () => {
     try {
+        // Construct the API URL using the current page value
+        const apiUrl = `https://api.pexels.com/v1/search?page=${page}&per_page=${perPage}&query=${encodeURIComponent(query)}`;
+        
         const response = await fetch(apiUrl, {
             method: 'GET',
             headers: {
@@ -56,27 +54,36 @@ const fetchCuratedPhotos = async () => {
         // Print the formatted result
         console.log(formattedPhotos + ',');
 
-        // Create a blob from the photos array
-        const jsonBlob = new Blob([formattedPhotos + ','], { type: 'application/json' });
+        // // Create a blob from the photos array
+        // const jsonBlob = new Blob([formattedPhotos + ','], { type: 'application/json' });
 
-        // Create a download link
-        const url = URL.createObjectURL(jsonBlob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'photos.json'; // Set the default filename
+        // // Create a download link
+        // const url = URL.createObjectURL(jsonBlob);
+        // const link = document.createElement('a');
+        // link.href = url;
+        // link.download = 'TphotosTEST.json'; // Set the default filename
 
-        // Append to body, click the link, and remove it
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // // Append to body, click the link, and remove it
+        // document.body.appendChild(link);
+        // link.click();
+        // document.body.removeChild(link);
 
-        // Revoke the object URL after download
-        URL.revokeObjectURL(url);
+        // // Revoke the object URL after download
+        // URL.revokeObjectURL(url);
 
     } catch (error) {
         console.error('Error fetching data:', error);
     }
 };
 
-// Call the function to execute the GET request
-fetchCuratedPhotos();
+// Main function to fetch photos multiple times
+const fetchPhotosUntilPageThree = async () => {
+    while (page <= numberOfPagesToCall) {
+        await fetchCuratedPhotos(); // Fetch the photos for the current page
+        page++; // Increment page for the next call
+    }
+};
+
+// Call the main function to execute the fetching
+fetchPhotosUntilPageThree();
+
