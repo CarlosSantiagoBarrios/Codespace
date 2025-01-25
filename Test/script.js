@@ -1,21 +1,21 @@
-const imageUrls = [
-    { "id": 800330, "large2x": "https://images.pexels.com/photos/800330/pexels-photo-800330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", "url": "https://www.pexels.com/photo/dog-with-brown-faux-fur-headband-800330/" },
+// Declare the variable outside of the fetch call.
+let imageUrls; 
 
-    { "id": 16066, "large2x": "https://images.pexels.com/photos/16066/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", "url": "https://www.pexels.com/photo/two-gray-elephants-16066/" },
-
-
-    {
-      "id": 30348504,
-      "large2x": "https://images.pexels.com/photos/30348504/pexels-photo-30348504.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "url": "https://www.pexels.com/photo/winter-morning-in-schladming-austria-30348504/"
-    },
-
-    {
-      "id": 30348503,
-      "large2x": "https://images.pexels.com/photos/30348503/pexels-photo-30348503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "url": "https://www.pexels.com/photo/serene-winter-pond-with-swan-in-schladming-30348503/"
-    }
-  ]
+// Fetch the JSON file
+fetch('photoLinks.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); // Parse the JSON data
+    })
+    .then(data => {
+        imageUrls = data; // Assign the parsed data to imageUrls
+        // console.log(imageUrls); // Now you can use imageUrls in your code
+    })
+    .catch(error => {
+        console.error('Error fetching JSON:', error);
+    });
 
   //END-PHOTOS
 
