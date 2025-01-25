@@ -21,7 +21,7 @@ fetch('../pexelsThumbnail/photoLinks.json')
 
   let currentIndex = 0;
   const imageElement = document.getElementById('pexelsThumbnail');
-  const displayDuration = 2000; // 3 seconds
+  const displayDuration = 3000; // 3 seconds
 
   function shuffleArrayExceptFirst(array) {
     for (let i = array.length - 1; i > 1; i--) {
