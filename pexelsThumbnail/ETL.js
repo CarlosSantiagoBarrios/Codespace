@@ -17,8 +17,8 @@ const apiKey = "6EdsN9H0AGKaO5qjDly59dWAJJpXaKZf2pc1AfbuaNeSzGyDGJQxcFqK";
 
 let page = 1;
 const perPage = 80;
-const query = 'sharks';
-const numberOfPagesToCall = 2;
+const query = 'nature';
+const numberOfPagesToCall = 100;
 
 // Initialize photoLinks to accumulate formatted results
 let photoLinks = '';
