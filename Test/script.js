@@ -1,8 +1,8 @@
 // Declare the variable outside of the fetch call.
-let imageUrls= []; 
+let imageUrls = []; 
 
 // Fetch the JSON file
-fetch('photoLinks.json')
+fetch('pexelsThumbnail/photoLinks2.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -10,7 +10,7 @@ fetch('photoLinks.json')
         return response.json(); // Parse the JSON data
     })
     .then(data => {
-        imageUrlss = data; // Assign the parsed data to imageUrls
+        imageUrls = data; // Assign the parsed data to imageUrls
         // console.log(imageUrls); // Now you can use imageUrls in your code
     })
     .catch(error => {
