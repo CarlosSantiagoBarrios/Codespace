@@ -1,5 +1,5 @@
 // Declare the variable outside of the fetch call.
-let imageUrls= []; 
+// let imageUrls= []; 
 
 // Fetch the JSON file
 fetch('photoLinks.json')
