@@ -10,7 +10,7 @@ fetch('photoLinks.json')
         return response.json(); // Parse the JSON data
     })
     .then(data => {
-        imageUrls = data; // Assign the parsed data to imageUrls
+        imageUrlss = data; // Assign the parsed data to imageUrls
         // console.log(imageUrls); // Now you can use imageUrls in your code
     })
     .catch(error => {
