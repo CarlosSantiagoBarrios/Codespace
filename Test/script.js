@@ -2,7 +2,7 @@
 let imageUrls = []; 
 
 // Fetch the JSON file
-fetch('photoLinks.json')
+fetch('pexelsThumbnail/photoLinks.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
