@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://cdn.shopify.com/s/files/1/0724/1505/2001/files/starrysky.gif?v=1728530345');
+    background-repeat: repeat;
+    background-size: auto;
+}
+    
+
+#pexelsThumbnailContainer {
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+    padding: 0px;
+    border-radius: 17px;
+
+    -webkit-box-shadow: 0px 0px 0px 1px rgb(255, 197, 255);
+    -moz-box-shadow: 0px 0px 0px 1px rgb(255, 197, 255);
+    box-shadow: 0px 0px 0px 1px rgb(255, 197, 255);
+}
+
+
+#pexelsThumbnail {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 17px;
+    object-fit: cover;
+    /* padding: 10px; */
+    margin: 10px;
+    cursor: pointer;
+}
