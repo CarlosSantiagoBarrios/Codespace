@@ -40,3 +40,22 @@ body {
     margin: 10px;
     cursor: pointer;
 }
+
+#typedtext {
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    max-width: 60%;
+    /*max-height: 87px;*/
+    margin:10px;
+    padding: 2px 4px 2px 6px;
+    
+    background-color: white;
+    font-family: 'Waiting for the Sunrise', cursive; 
+    font-size:9px; 
+    letter-spacing: 2px; 
+  
+    border-radius: 10px 10px 0px 10px;
+
+}
