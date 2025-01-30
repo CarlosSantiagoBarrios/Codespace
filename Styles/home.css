@@ -10,7 +10,7 @@ body {
     background-size: auto;
 }
     
-
+/* pexelsThumbnail */
 #pexelsThumbnailContainer {
 
     position: fixed;
@@ -41,6 +41,7 @@ body {
     cursor: pointer;
 }
 
+/* typewriter */
 #typedtext {
 
     position: fixed;
@@ -58,4 +59,59 @@ body {
   
     border-radius: 10px 10px 0px 10px;
 
+}
+
+
+/* gifs */
+#merch {
+    position: fixed;
+    left: 0px;
+    bottom: 285px;
+    width: 35px;
+    height: 35px;
+    border-radius: 17px;
+    object-fit: cover;
+    /* padding: 10px; */
+    margin: 10px;
+    cursor: pointer;
+}
+
+#youtube {
+    position: fixed;
+    left: 0;
+    bottom: 230px;
+    width: 35px;
+    height: 35px;
+    border-radius: 17px;
+    object-fit: cover;
+    /* padding: 10px; */
+    margin: 10px;
+    cursor: pointer;
+}
+
+#emailUs {
+    position: fixed;
+    left: 0;
+    bottom: 170px;
+    width: 35px;
+    height: 35px;
+    border-radius: 17px;
+    object-fit: cover;
+    /* padding: 10px; */
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+#iLoveCoffe {
+    position: fixed;
+    left: 0;
+    bottom: 120px;
+    width: 35px;
+    height: 35px;
+    border-radius: 17px;
+    object-fit: cover;
+    /* padding: 10px; */
+    margin: 10px;
+    cursor: pointer;
 }
