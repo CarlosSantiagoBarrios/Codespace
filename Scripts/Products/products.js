@@ -21,7 +21,7 @@ function updateImage() {
     if (currentIndex > totalImages) {
         currentIndex = 1; // Reset index after 8
     }
-    imageElement.src = `http://love.xxx/k/content/02-store/09-dog/${currentIndex}.png`;
+    imageElement.src = `https://raw.githubusercontent.com/CarlosSantiagoBarrios/Codespace/refs/heads/main/Assets/Perrito/${currentIndex}.png`;
 }
 
 setInterval(updateImage, 150); // Call updateImage every 0.5 seconds
