@@ -6614,8 +6614,9 @@ function typewriter() {
           iArrLength = aText[iIndex].length;
           setTimeout(typewriter, 500);
       } else {
-          // When the typing is finished, set the border-radius
-          destination.style.borderRadius = "10px";
+          // When the typing is finished...
+          destination.style.borderRadius = "10px";// Set the border-radius to include bottom right corner
+          destination.innerHTML = destination.innerHTML.slice(0, -1);// No underscore at the end
       }
   } else {
       setTimeout(typewriter, iSpeed);
