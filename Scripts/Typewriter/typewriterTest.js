@@ -69,6 +69,7 @@ function typewriter() {
             // When the typing is finished...
             destination.style.borderRadius = "10px"; // Set the border-radius 
             //destination.innerHTML = sContents + aText[iIndex - 1].substring(0, iTextPos); // No underscore at the end
+            destination.innerHTML = destination.innerHTML.slice(0, -1);
         }
     } else {
         setTimeout(typewriter, iSpeed);
