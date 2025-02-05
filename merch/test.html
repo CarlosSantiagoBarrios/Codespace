@@ -52,7 +52,7 @@
 			max-width: 100%;			
 		}
 
-		.backArrow {
+		#backArrow {
 			position: relative;
 			width: 30px;
 			height: 30px;
@@ -62,13 +62,13 @@
 			overflow: hidden;
 		}
 
-		.backArrow:hover {
+		#backArrow:hover {
 			/*  animation:borderAni 5s cubic-bezier(0, 0.6, 1, 0.4); */
 			border: solid 0px rgb(255, 255, 255);
 			border-radius: 50%;
 		}
 
-		.backArrow:after {
+		#backArrow:after {
 			position: absolute;
 			display: block;
 			content: "";
@@ -81,7 +81,7 @@
 			transform: translatex(4px);
 		}
 
-		.backArrow:before {
+		#backArrow:before {
 			position: absolute;
 			display: block;
 			content: "";
@@ -97,12 +97,12 @@
 			transform: rotatez(-45deg);
 		}
 
-		.backArrow:hover:before {
-			animation: aniArrow01 1s cubic-bezier(0.8, 0.6, 0.5, 0.4) infinite 0.5s;
+		#backArrow:hover:before {
+			animation: aniArrow01 1s cubic-bezier(0.7, 1, 0.2, 1) infinite 0s;
 		}
 
-		.backArrow:hover:after {
-			animation: aniArrow02 1s cubic-bezier(0.8, 0.6, 0.5, 0.4) infinite 0.5s;
+		#backArrow:hover:after {
+			animation: aniArrow02 1s cubic-bezier(0.7, 1, 0.2, 1) infinite 0s;
 		}
 
 		@keyframes aniArrow01 {
@@ -202,11 +202,11 @@
 
 		<div id="backArrowContainer">
 
-			<a id="backArrowLink" href="https://kirasanart.com/">
+<!-- 			<a id="backArrowLink" href="https://kirasanart.com/"> -->
 
-				<div class="backArrow"></div>
+				<div id="backArrow"></div>
 
-				<a>
+<!-- 				<a> -->
 		</div>
 
 	</div>
