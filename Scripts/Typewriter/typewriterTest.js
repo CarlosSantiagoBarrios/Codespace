@@ -65,9 +65,10 @@ function typewriter() {
             iArrLength = aText[iIndex].length;
             setTimeout(typewriter, 500);
         } else {
-            // When the typing is finished, set the border-radius
-            destination.style.borderRadius = "10px";
-            destination.style.border = "1px solid black"; // Optional: Add a border to make the border-radius visible
+            
+            // When the typing is finished...
+            destination.style.borderRadius = "10px"; // Set the border-radius 
+            destination.innerHTML = sContents + aText[iIndex - 1].substring(0, iTextPos); // No underscore at the end
         }
     } else {
         setTimeout(typewriter, iSpeed);
