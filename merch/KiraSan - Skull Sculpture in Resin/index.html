@@ -347,6 +347,25 @@
     ]
   },
   "lineItem": {
+    
+    contents: {
+      image: true,
+    },
+    templates: {
+      image: '<a href="https://kirasanart.com/" style="display: block;">' +
+    '<div class="{{data.classes.lineItem.image}}" style="background-image: url({{data.lineItemImage}})" data-element="lineItem.image"></div>' +
+'</a>'
+    },
+    order: [
+       'image',
+      'title',
+      'variantTitle',
+      'price',
+      'priceWithDiscounts',
+      'quantity',
+    ],
+    
+    
     "styles": {
       "variantTitle": {
         "color": "#000000"

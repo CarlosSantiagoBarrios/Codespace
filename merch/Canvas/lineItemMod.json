@@ -1,5 +1,5 @@
 "lineItem": {
-                "contents": {
-                  "details": true,
-                  "image": false,
-                }
+  "contents": {
+    "details": true,
+    "image": false,
+  }
